@@ -1,0 +1,39 @@
+ p{
+            color:darkgray;
+            font-family: 'Courier New', Courier, monospace
+        }
+
+        h1,h2{
+            color: darkgoldenrod;
+            font-family: fantasy;
+            font-size: 2cm;
+            text-align: center
+        }
+
+
+        .myh2{
+            color: blueviolet
+        }
+
+        #myFirstId{
+            color: yellowgreen
+        }
+
+        a:hover{
+            color: black;
+            font-style: italic;
+            font-family: fantasy;
+            
+        }
+
+        a{
+            text-align: center
+        }
+        a:link{
+            color: tomato
+        }
+
+        a:visited{
+            text-decoration: blue
+        }
+        }

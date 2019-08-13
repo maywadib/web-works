@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script type="text/javascript">
+
+        function getDomElement() {
+            para = document.getElementsByTagName("p")[0]
+            console.log(para)
+
+            scriptTag = document.getElementsByTagName("script")[0]
+            console.log(scriptTag)
+        }
+
+        function fnShowColor() {
+            var _body = document.body;
+            console.log("number of attributes on body tag is " + _body.attributes.length);
+
+            //get all the attributes
+            for (i = 0; i < _body.attributes.length; i++) {
+                console.log(_body.attributes[i]);
+            }
+        }
+
+        function fnSetBGColor(color) {
+            document.body.setAttribute("bgcolor", color);
+        }
+
+
+        function fnManipulateDOM() {
+            _epara = document.getElementsByTagName('p')[0];
+
+            //<b></b>
+            _para = document.createElement("b");
+
+            //heyyyy
+            _myText = document.createTextNode("heyyyyyyyyyyyyyyyyyyy");
+
+
+            //<b>heyyyy</b>
+            _para.appendChild(_myText);
+
+            document.body.insertBefore(_para, _epara)
+
+            console.log(_epara)
+        }
+
+    </script>
+
+</head>
+
+<body bgcolor="gold">
+    <p>My First page</p>
+    <button onmouseover="getDomElement()">Click</button>
+    <hr>
+    <button onmouseover="fnShowColor()">showColor</button>
+    <hr>
+
+    <button onmouseover="fnSetBGColor('Blue')">Blue</button>
+    <hr>
+    <button onmouseover="fnSetBGColor('Red')">Red</button>
+    <hr>
+    <button onmouseover="fnSetBGColor('Yellow')">Yellow</button>
+    <hr>
+
+    <button onmouseover="fnManipulateDOM()">Manipulate</button>
+    <hr>
+
+</body>
+
+</html>

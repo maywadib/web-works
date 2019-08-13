@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script type="text/javascript">
+    
+    function fnTest() {
+        
+        
+        try{
+        allert("something something")
+        }
+        catch(err) {
+            console.log("Function not defined "+err);
+        }
+    }
+    
+    function fnBusinessTest() {
+        var age = parseInt(prompt("Enter Age"));
+
+        try {
+        if(age>80) {
+            throw "err1";
+        } else if(age<0){
+            throw "err2"
+        } else {
+            console.log("Congo! you are alive");
+            
+        }
+    }
+    catch(er){
+        if(er == "err1") {
+            console.log("You are a dead man!");
+        } else if(er == "err2") {
+            console.log("You are yet to born man!");
+            
+        }
+
+    }
+
+
+    }
+    
+    onerror = handleError;
+
+    function handleError(message, url, lineNumber) {
+        console.log("Error occured");
+        console.log("With message " + message);
+        console.log("URL " + url);
+        console.log("Line number " + lineNumber);
+
+        
+    }
+
+    function fnTest1() {
+        allert("HI")
+    }
+    
+    
+    </script>
+ 
+</head>
+<body>
+    <button onclick="fnTest()">Click</button>
+    <button onclick="fnBusinessTest()">BT</button>
+    <button onclick="fnTest1()">handleError</button>
+</body>
+</html>

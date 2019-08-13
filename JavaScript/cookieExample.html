@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+
+        function setCookie() {
+            var name = document.myform.uname.value
+
+            dt = new Date();
+
+            //add 1 day
+            dt.setDate(dt.getDate()+1);
+
+            document.cookie = "uname=" +escape(name) + ";expires=" + dt;
+            console.log("Cookie set");
+            
+
+        }
+
+        function checkCookie() {
+            cookieValue = getCookie('uname');
+
+            if(cookieValue == null || cookieValue!="") {
+                return cookieValue;
+
+            }else {
+                return "no cookie found";
+            }
+        }
+
+
+
+        function getCookie(name) {
+
+            if(document.cookie.length>0) {
+                _nameIndex = document.cookie.indexOf(name);
+                _endIndex = name.length + 1;
+                console.log(_nameIndex);
+                
+                _semicolonPosition = document.cookie.indexOf(";",_endIndex);
+                console.log(_semicolonPosition);
+                
+
+            }else {
+                console.log(null);
+                
+            }
+
+        }
+
+    </script>
+</head>
+
+<body onload="checkCookie()">
+    <form name= "myform">
+        <input type="text" name="uname" id="uname"/>
+        <!-- <button onclick="setCookie()">SET COKKIE</button> -->
+
+        <input type="button" value="Click" onclick="setCookie()">
+
+    </form>
+
+</body>
+
+</html>

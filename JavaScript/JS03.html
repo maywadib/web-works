@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+        function checkAge() {
+            name = prompt("Enter your name ")
+            age = prompt("Enter your age ", 18);
+
+
+            // document.write overwrites the whole web page
+
+
+            // if(age>18) {
+            //     document.write("<h1>You are eligible to vote </h1>");
+            // }
+            // else {
+            //     document.write("<h1>Sorry please wait for </h1>" + (18-age) + " years");
+            // }
+
+
+            message = "";
+            if (age > 18) {
+                message = "<h1>You are eligible to vote </h1>";
+            }
+            else {
+                message = "<h1>Sorry please wait for </h1>" + (18 - age) + " years";
+            }
+
+            document.getElementById("message").innerHTML = message
+
+        }
+
+
+
+        // number of arguments
+        function display() {
+            console.log("you have passed " + display.arguments.length);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <button onclick="checkAge()">Click</button>
+    <hr>
+
+    <button onclick="display('  true',1,1,1,1,1,1,1,1,1)">display</button>
+
+    <div id="message"></div>
+
+</body>
+
+</html>
+

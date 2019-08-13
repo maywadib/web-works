@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+        function askNumber() {
+            sum = 0;
+            while (1) {
+                number = parseInt(prompt("Enter number "))
+                
+
+                if (number == 0) {
+                    break;
+                }
+                else {
+                   sum = (sum+number)
+                }
+
+                document.getElementById("sum").innerHTML = sum
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <button onclick="askNumber(22)">Click</button>
+    <div id="sum"></div>
+
+</body>
+
+</html>

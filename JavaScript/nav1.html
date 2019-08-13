@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script type="text/javascript">
+        
+        function ask(){
+
+            var arr = new Array("images/disney.png","images/marvel.png","images/pixar.png");
+            var choice = prompt("Enter \n1. Disney\n2. Marvel\n3. Pixar");
+            if(choice.match(/[1-3]/)!=choice) {
+                alert("Sorry try again")
+            }else {
+                changeImage(arr[parseInt(choice-1)]);
+            }
+            
+        }
+        
+        function changeImage(image) {
+            parent.content.location.href = image;
+        }
+
+        </script>
+</head>
+<body onload="ask()">
+    <button onclick="ask()">Ask</button>
+</body>
+</html>

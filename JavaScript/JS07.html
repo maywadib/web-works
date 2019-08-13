@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+
+
+        function fnArrayOpr() {
+            arr = new Array(5);
+            arr[0] = 10;
+            arr[1] = 20;
+            arr[2] = 30;
+            arr[3] = 40;
+            arr[4] = 50;
+            arr[5] = 60;
+
+
+            console.log("Number of elements in array " + arr.length);
+            console.log("Array content " + arr);
+
+            //at the end
+            arr.push(100)
+            console.log("Array content after push " + arr);
+
+
+            //from end
+            arr.pop();
+            console.log("Array content after pop " + arr);
+
+
+            //at start
+            arr.unshift(500);
+            console.log("Array content after unshift " + arr);
+
+            //from start
+            arr.shift();
+            console.log("Array content after shift " + arr);
+
+
+            //splice(from postioin,number of elements to delete,what to add)
+            arr.splice(1, 1, 100);
+            console.log("Array content after splice " + arr);
+
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="fnArrayOpr()">Click me</button>
+</body>
+
+</html>
