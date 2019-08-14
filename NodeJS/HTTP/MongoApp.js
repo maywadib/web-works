@@ -2,7 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser')
 const {MongoClient, ObjectId} = require('mongodb');
 const url = "mongodb://localhost:27017"
-const {getEmployeeById,getSortedRecords,addNewEmp} = require("../services/mongo-emps-service")
+const {getEmployeeById,getSortedRecords,addNewEmp,updateNewEmp,deleteEmp} = require("../services/mongo-emps-service")
 const id = "5d43cd30a6d183f707172497"
 
 const app = express();
@@ -31,6 +31,18 @@ app.post("/employee", (req,res) => {
     .catch(err => console.log(err))
 })
 
+app.delete("/employee/:id", (req,res) => {
+    deleteEmp(req.params.id)
+    .then(data => res.send(data))
+    .catch(err => console.log(err))
+})
+
+app.post("/employee/update/:id",(req,res) => {
+    
+    updateNewEmp(req.params.id,req.body)
+    .then(data => res.send(data))
+    .catch(err => console.log(err))
+})
 //to show path param
 // app.get("/example/:name/:age",(req,res) => {
     //     //https://localhost:3000/example/Mayur/29
